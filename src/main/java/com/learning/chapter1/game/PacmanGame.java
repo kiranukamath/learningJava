@@ -1,5 +1,8 @@
-package com.learning.looseCoupling.game;
+package com.learning.chapter1.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacmanGame implements GamingConsole{
 
     public void up(){

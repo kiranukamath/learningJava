@@ -1,4 +1,4 @@
-package com.learning.looseCoupling.game;
+package com.learning.chapter1.game;
 
 public interface GamingConsole {
     
