@@ -1,0 +1,6 @@
+insert into course (id,name,author) values(3,'learn java 17','author1')
+insert into course (id,name,author) values(2,'learn spring','author1')
+insert into course (id,name,author) values(1,'learn spring data','author1')
+
+
+select * from course
