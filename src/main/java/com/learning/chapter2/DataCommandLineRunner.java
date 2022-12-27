@@ -9,7 +9,7 @@ import com.learning.chapter2.jpa.CourseSpringJPARepository;
 import com.learning.chapter2.jpa.JPARepository;
 
 @Component
-public class DataCommandLineRunner implements CommandLineRunner {
+public class DataCommandLineRunner {//implements CommandLineRunner {
 
     // @Autowired
     // private JDBCRepository repository;
@@ -20,7 +20,7 @@ public class DataCommandLineRunner implements CommandLineRunner {
     @Autowired
     private CourseSpringJPARepository repository;
 
-    @Override
+    /* @Override
     public void run(String... args) throws Exception {
         repository.save(new Course(1, "learn aws", "author1"));
         repository.save(new Course(2, "learn spring", "author1"));
@@ -29,6 +29,6 @@ public class DataCommandLineRunner implements CommandLineRunner {
         repository.deleteById(1l);
         System.out.println(repository.findById(2l));
         System.out.println("Author courses"+repository.findByAuthor("author1"));
-    }
+    } */
 
 }
