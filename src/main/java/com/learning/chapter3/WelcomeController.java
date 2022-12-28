@@ -1,5 +1,6 @@
 package com.learning.chapter3;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,18 +16,25 @@ public class WelcomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String goToLoginPage(ModelMap model) {
-        model.put("name", "kiran");
+        model.put("name", getLoggedinUsername());
         return "welcome";
     }
 
-    /* @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String goToWelcomePage(@RequestParam String name, @RequestParam String password, ModelMap model) {
-        if (authenticationService.authenticate(name, password)) {
-            model.put("name", name);
-            return "welcome";
-        }
-        model.put("errorMessage","Invalid Username/Password, Please retry");
-        return "login";
-    } */
+    private String getLoggedinUsername() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
+    /*
+     * @RequestMapping(value = "login", method = RequestMethod.POST)
+     * public String goToWelcomePage(@RequestParam String name, @RequestParam String
+     * password, ModelMap model) {
+     * if (authenticationService.authenticate(name, password)) {
+     * model.put("name", name);
+     * return "welcome";
+     * }
+     * model.put("errorMessage","Invalid Username/Password, Please retry");
+     * return "login";
+     * }
+     */
 
 }

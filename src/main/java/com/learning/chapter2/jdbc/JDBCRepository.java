@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.learning.chapter2.Course;
 
-@Repository
+// @Repository
 public class JDBCRepository {
-
+/* 
     @Autowired
     private JdbcTemplate springJdbcTemplate;
 
@@ -35,5 +35,5 @@ public class JDBCRepository {
 
     public Course findById(long id) {
         return springJdbcTemplate.queryForObject(Select_Query, new BeanPropertyRowMapper<>(Course.class), id);
-    }
+    } */
 }
